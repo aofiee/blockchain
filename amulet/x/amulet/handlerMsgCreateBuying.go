@@ -17,7 +17,7 @@ func handleMsgCreateBuying(ctx sdk.Context, k keeper.Keeper, msg types.MsgCreate
     BuyingBy: msg.BuyingBy,
 	}
 	moduleAcct := sdk.AccAddress(crypto.AddressHash([]byte(types.ModuleName)))
-	payment, _ := sdk.ParseCoins("1rune")
+	payment, _ := sdk.ParseCoins("100gold")
 	if err := k.CoinKeeper.SendCoins(ctx, buying.Creator, moduleAcct, payment); err != nil {
 		return nil, err
 	}
