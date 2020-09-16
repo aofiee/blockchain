@@ -1,0 +1,13 @@
+version: 1
+accounts:
+  - name: aofiee
+    coins: ["100000000token", "100000000stake"]
+  - name: champ
+    coins: ["500token"]
+  - name: eiang
+    coins: ["200token"]
+  - name: chao
+    coins: ["100token"]
+validator:
+  name: aofiee
+  staked: "100000000stake"
