@@ -1,6 +1,6 @@
 FROM ubuntu:focal
 
-WORKDIR /blockchain
+WORKDIR /
 EXPOSE 12345 1317 26657 8080 26656
 ENV GOROOT /usr/local/go
 ENV GOPATH $HOME/go
@@ -19,8 +19,8 @@ RUN apt-get update -y && \
     # echo 'export GOROOT=/usr/local/go' > ~/.bashrc && \
     # echo 'export GOPATH=${HOME}/go' >> ~/.bashrc && \
     # echo 'export PATH=${GOPATH}/bin:${GOROOT}/bin:${PATH}' >> ~/.bashrc && \
-    git clone https://github.com/aofiee/amulet.git && \
-    cd amulet && \
-    git checkout commit-transaction  && \
+    git clone https://github.com/aofiee/blockchain.git && \
+    cd blockchain/amulet && \
     make install && \
     rm -r /var/lib/apt/lists/*
+WORKDIR /blockchain/amulet

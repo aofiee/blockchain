@@ -26,7 +26,7 @@ func handleMsgCreateAmulet(ctx sdk.Context, k keeper.Keeper, msg types.MsgCreate
     Remark: msg.Remark,
   }
   moduleAcct := sdk.AccAddress(crypto.AddressHash([]byte(types.ModuleName)))
-	payment, _ := sdk.ParseCoins("30token")
+	payment, _ := sdk.ParseCoins("100gold")
 	if err := k.CoinKeeper.SendCoins(ctx, amulet.Creator, moduleAcct, payment); err != nil {
 		return nil, err
 	}
